@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#fff"/>
+  <path d="M9 7h10l4 4v14H9z" fill="none" stroke="#d74149" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M19 7v5h4" fill="none" stroke="#d74149" stroke-width="1.7"/>
+  <text x="16" y="21" fill="#d74149" font-family="Arial,sans-serif" font-size="8" font-weight="700" text-anchor="middle">FR</text>
+</svg>

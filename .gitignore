@@ -1,0 +1,14 @@
+.DS_Store
+.vercel/
+.env
+.env.*
+__pycache__/
+*.pyc
+
+# The saved Framer download also contains editor pages and an auth response.
+# Keep only the source page and public assets used by the site.
+prolens.framer.website/*
+!prolens.framer.website/framerusercontent.com/
+!prolens.framer.website/fonts.gstatic.com/
+!prolens.framer.website/prolens.framer.website/
+prolens.framer.website/framerusercontent.com/sites/
