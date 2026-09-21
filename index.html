@@ -12468,6 +12468,170 @@ document.querySelectorAll('form').forEach(form => form.addEventListener('submit'
   const values = [...form.querySelectorAll('input, textarea')].map(field => `${field.placeholder || field.name}: ${field.value}`).join('\n');
   location.href = 'mailto:work@heyabdessalam.info?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(values);
 }));
+
+/* ===== CV Language Toggle EN/FR ===== */
+(function(){
+const T = {
+"I build and run online businesses end to end, combining e-commerce operations, web design, digital marketing and AI automation.":"Je cr\u00e9e et g\u00e8re des activit\u00e9s en ligne de bout en bout, en combinant op\u00e9rations e-commerce, web design, marketing digital et automatisation IA.",
+"Let's connect":"Contactez-moi",
+"9 years of hands-on digital work":"9 ans d'exp\u00e9rience pratique dans le digital",
+"AI Automation":"Automatisation IA",
+"Digital Marketing":"Marketing Digital",
+"About Me":"\u00c0 propos",
+"Hello, I\u2019m Abdessalam":"Bonjour, je suis Abdessalam",
+"Based in Casablanca, Morocco, I build practical digital businesses and systems from idea to launch.":"Bas\u00e9 \u00e0 Casablanca, Maroc, je construis des business digitaux pratiques, de l'id\u00e9e au lancement.",
+"I launched and operated nine online stores, managing sourcing, Shopify builds, fulfilment and customer service across different markets.":"J'ai lanc\u00e9 et g\u00e9r\u00e9 neuf boutiques en ligne, en g\u00e9rant le sourcing, les boutiques Shopify, la logistique et le service client sur diff\u00e9rents march\u00e9s.",
+"I create sales pipelines, lead routing, email sequences and live Google Sheets dashboards that reduce repetitive work.":"Je cr\u00e9e des pipelines de vente, du routage de prospects, des s\u00e9quences e-mail et des tableaux de bord Google Sheets en temps r\u00e9el qui r\u00e9duisent le travail r\u00e9p\u00e9titif.",
+"I design and develop websites and landing pages with WordPress, Elementor and AI-assisted coding, with a focus on conversion and SEO.":"Je con\u00e7ois et d\u00e9veloppe des sites web et landing pages avec WordPress, Elementor et le d\u00e9veloppement assist\u00e9 par IA, ax\u00e9s sur la conversion et le SEO.",
+"I run Meta advertising campaigns, test audiences and improve results through SEO, conversion optimisation and email marketing.":"Je g\u00e8re des campagnes publicitaires Meta, teste les audiences et am\u00e9liore les r\u00e9sultats gr\u00e2ce au SEO, \u00e0 l'optimisation des conversions et \u00e0 l'e-mail marketing.",
+"My mission is to turn ideas into working digital businesses and make them run efficiently.":"Ma mission est de transformer les id\u00e9es en business digitaux fonctionnels et de les faire tourner efficacement.",
+"From the CV":"Depuis le CV",
+"Skills & Tools":"Comp\u00e9tences & Outils",
+"Hands-on work across operations, growth, design and automation.":"Un travail concret couvrant les op\u00e9rations, la croissance, le design et l'automatisation.",
+"E-Commerce Operations":"Op\u00e9rations E-commerce",
+"Shopify, Cash-on-Delivery, dropshipping, supplier sourcing, inventory, fulfilment, customer service and returns.":"Shopify, paiement \u00e0 la livraison (COD), dropshipping, sourcing fournisseurs, stock, logistique, service client et retours.",
+"Facebook and Instagram Ads, media buying, audience testing, SEO, conversion optimisation and email marketing.":"Publicit\u00e9s Facebook et Instagram, achat m\u00e9dia, tests d'audiences, SEO, optimisation des conversions et e-mail marketing.",
+"Web Design & Development":"Web Design & D\u00e9veloppement",
+"WordPress, Elementor, UI/UX, responsive websites, landing pages, HTML/CSS and AI-assisted development with VS Code.":"WordPress, Elementor, UI/UX, sites responsives, landing pages, HTML/CSS et d\u00e9veloppement assist\u00e9 par IA avec VS Code.",
+"AI & Automation":"IA & Automatisation",
+"Sales and call-centre workflows, automated emails, Google Sheets formulas and dashboards, and custom scripts.":"Workflows commerciaux et de centre d'appels, e-mails automatis\u00e9s, formules et tableaux de bord Google Sheets, et scripts sur mesure.",
+"Design & Business":"Design & Business",
+"Canva, content creation, brand assets, business model design, process improvement and reporting.":"Canva, cr\u00e9ation de contenu, identit\u00e9 visuelle, conception de mod\u00e8les \u00e9conomiques, am\u00e9lioration des processus et reporting.",
+"Tools & Languages":"Outils & Langues",
+"Google Sheets, Microsoft Word and PDF workflows; macOS and Windows. Arabic: native. English: very good, working language. French: basic.":"Google Sheets, Microsoft Word et workflows PDF ; macOS et Windows. Arabe : langue maternelle. Anglais : tr\u00e8s bon, langue de travail. Fran\u00e7ais : basique.",
+"Projects":"Projets",
+"What I\u2019m Proud Of":"Ce Dont Je Suis Fier",
+"Businesses and systems I have built and operated myself.":"Des business et syst\u00e8mes que j'ai cr\u00e9\u00e9s et g\u00e9r\u00e9s moi-m\u00eame.",
+"9 E-Commerce Stores":"9 Boutiques E-commerce",
+"Online retail":"Vente en ligne",
+"COD Operations":"Op\u00e9rations COD",
+"Morocco & Africa":"Maroc & Afrique",
+"Sales & reporting systems":"Syst\u00e8mes de vente & reporting",
+"Other projects":"Autres projets",
+"Contact & CV":"Contact & CV",
+"Get in Touch & Download":"Contact & T\u00e9l\u00e9chargement",
+"Email Me":"Envoyez-moi un e-mail",
+"English CV":"CV Anglais",
+"French CV":"CV Fran\u00e7ais",
+"Career":"Parcours",
+"My Career":"Mon Parcours",
+"Nine years of independent work in e-commerce, web development, marketing and automation.":"Neuf ans de travail ind\u00e9pendant en e-commerce, d\u00e9veloppement web, marketing et automatisation.",
+"AI Automation & Web Development Specialist":"Sp\u00e9cialiste Automatisation IA & D\u00e9veloppement Web",
+"Self-Employed \u2014 Casablanca":"Ind\u00e9pendant \u2014 Casablanca",
+"2024 \u2192 Now":"2024 \u2192 Aujourd'hui",
+"Freelance Web Designer & Developer":"Web Designer & D\u00e9veloppeur Freelance",
+"Self-Employed \u2014 Remote":"Ind\u00e9pendant \u2014 \u00c0 distance",
+"2022 \u2192 Now":"2022 \u2192 Aujourd'hui",
+"COD E-Commerce Operator \u2014 Morocco & Africa":"Op\u00e9rateur E-commerce COD \u2014 Maroc & Afrique",
+"E-Commerce Store Owner \u2014 Dropshipping":"Propri\u00e9taire de Boutiques E-commerce \u2014 Dropshipping",
+"2019 \u2192 Now":"2019 \u2192 Aujourd'hui",
+"Download Full CV":"T\u00e9l\u00e9charger le CV complet",
+"Experience in Detail":"Exp\u00e9rience en D\u00e9tail",
+"Self-Employed \u00b7 Casablanca \u00b7 2024 \u2192 Present":"Ind\u00e9pendant \u00b7 Casablanca \u00b7 2024 \u2192 Aujourd'hui",
+"Build automation for sales, lead distribution, email, marketing and reporting. Develop websites and internal tools with AI-assisted development. Create automated Google Sheets workflows and dashboards.":"Cr\u00e9ation d'automatisations pour les ventes, la distribution des prospects, les e-mails, le marketing et le reporting. D\u00e9veloppement de sites web et d'outils internes assist\u00e9s par IA. Cr\u00e9ation de workflows et tableaux de bord Google Sheets automatis\u00e9s.",
+"Self-Employed \u00b7 Remote \u00b7 2022 \u2192 Present":"Ind\u00e9pendant \u00b7 \u00c0 distance \u00b7 2022 \u2192 Aujourd'hui",
+"Design and develop WordPress and Elementor websites with a focus on UI/UX and on-page SEO. Create conversion-focused landing pages and digital assets using Canva and AI design tools.":"Conception et d\u00e9veloppement de sites WordPress et Elementor ax\u00e9s UI/UX et SEO on-page. Cr\u00e9ation de landing pages orient\u00e9es conversion et de visuels avec Canva et des outils de design IA.",
+"Self-Employed \u00b7 Morocco \u00b7 2023 \u2192 2024":"Ind\u00e9pendant \u00b7 Maroc \u00b7 2023 \u2192 2024",
+"Managed product sourcing, marketing, order processing and delivery coordination. Ran Meta ads and improved call-centre, order confirmation and returns workflows.":"Gestion du sourcing produits, du marketing, du traitement des commandes et de la coordination des livraisons. Campagnes Meta Ads et am\u00e9lioration des workflows du centre d'appels, de confirmation des commandes et des retours.",
+"Self-Employed \u00b7 Remote \u00b7 2019 \u2192 Present":"Ind\u00e9pendant \u00b7 \u00c0 distance \u00b7 2019 \u2192 Aujourd'hui",
+"Launched and managed nine stores across markets and product categories. Handled product research, suppliers, pricing, store operations and Meta advertising.":"Lancement et gestion de neuf boutiques sur diff\u00e9rents march\u00e9s et cat\u00e9gories. Recherche produits, fournisseurs, tarification, op\u00e9rations des boutiques et publicit\u00e9 Meta.",
+"Online Seller \u2014 eBay & Etsy":"Vendeur en Ligne \u2014 eBay & Etsy",
+"Self-Employed \u00b7 Remote \u00b7 2017 \u2192 2019":"Ind\u00e9pendant \u00b7 \u00c0 distance \u00b7 2017 \u2192 2019",
+"Managed listings, prices, orders and customer transactions on eBay and Etsy. Coordinated sourcing and fulfilment between suppliers and international customers.":"Gestion des fiches produits, des prix, des commandes et des transactions clients sur eBay et Etsy. Coordination du sourcing et de la livraison entre fournisseurs et clients internationaux.",
+"Achievements":"R\u00e9alisations",
+"Results & Capabilities":"R\u00e9sultats & Capacit\u00e9s",
+"Launched and managed nine e-commerce stores across different markets and product categories.":"Lancement et gestion de neuf boutiques e-commerce sur diff\u00e9rents march\u00e9s et cat\u00e9gories de produits.",
+"9 online stores":"9 boutiques en ligne",
+"E-commerce operations":"Op\u00e9rations e-commerce",
+"Built and operated Cash-on-Delivery e-commerce operations across Morocco and Africa, from sourcing through delivery coordination.":"Cr\u00e9ation et gestion d'op\u00e9rations e-commerce en paiement \u00e0 la livraison au Maroc et en Afrique, du sourcing \u00e0 la coordination des livraisons.",
+"COD operations":"Op\u00e9rations COD",
+"Designed responsive websites and high-converting landing pages with WordPress, Elementor and AI-assisted development.":"Conception de sites responsives et de landing pages \u00e0 forte conversion avec WordPress, Elementor et le d\u00e9veloppement assist\u00e9 par IA.",
+"Web design":"Web design",
+"Sites and landing pages":"Sites et landing pages",
+"Built automations for lead routing, email communication and self-updating reporting dashboards.":"Cr\u00e9ation d'automatisations pour le routage des prospects, la communication par e-mail et des tableaux de bord auto-actualis\u00e9s.",
+"Automation systems":"Syst\u00e8mes d'automatisation",
+"Sales and reporting":"Ventes et reporting",
+"How I Learned":"Comment J'ai Appris",
+"Formal education and continuous learning applied to real business projects.":"Formation acad\u00e9mique et apprentissage continu appliqu\u00e9s \u00e0 de vrais projets business.",
+"I keep learning by building, testing and improving real projects.":"Je continue d'apprendre en construisant, testant et am\u00e9liorant de vrais projets.",
+"Facult\u00e9 des Sciences Ben M'Sik \u2014 Chemistry (no degree)":"Facult\u00e9 des Sciences Ben M'Sik \u2014 Chimie (sans dipl\u00f4me)",
+"Baccalaur\u00e9at \u2014 Scientific Stream":"Baccalaur\u00e9at \u2014 Fili\u00e8re Scientifique",
+"Since 2017":"Depuis 2017",
+"E-Commerce & Digital Marketing":"E-Commerce & Marketing Digital",
+"Ongoing":"En cours",
+"Web Development & AI Automation":"D\u00e9veloppement Web & Automatisation IA",
+"Contact Me":"Contactez-moi",
+"Ways":"Moyens",
+"to":"de",
+"Connect":"Contact",
+"Casablanca, Morocco":"Casablanca, Maroc",
+"Download CV \u2014 English":"T\u00e9l\u00e9charger le CV \u2014 Anglais",
+"CV \u2014 Fran\u00e7ais":"CV \u2014 Fran\u00e7ais",
+"Contact Me:":"Contactez-moi :",
+"Open email draft":"Ouvrir le brouillon d'e-mail",
+"Your email app will open with the message ready to send.":"Votre application e-mail s'ouvrira avec le message pr\u00eat \u00e0 envoyer.",
+"\u00a9 2026 Abdessalam Ouaouane. All rights reserved.":"\u00a9 2026 Abdessalam Ouaouane. Tous droits r\u00e9serv\u00e9s.",
+"Download full CV":"T\u00e9l\u00e9charger le CV complet",
+"About":"\u00c0 propos",
+"Skills":"Comp\u00e9tences",
+"Contact":"Contact",
+"Education":"Formation",
+"Download CV":"T\u00e9l\u00e9charger le CV",
+"Your Name *":"Votre nom *",
+"Your Email *":"Votre e-mail *",
+"Your Phone":"Votre t\u00e9l\u00e9phone",
+"Your message *":"Votre message *"
+};
+const originals = new Map();
+const nodes = [];
+const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+let n;
+while ((n = walker.nextNode())) {
+  const p = n.parentElement;
+  if (!p || ['SCRIPT','STYLE'].includes(p.tagName)) continue;
+  const t = n.textContent.trim();
+  if (Object.prototype.hasOwnProperty.call(T, t)) { nodes.push(n); originals.set(n, n.textContent); }
+}
+const phEls = [...document.querySelectorAll('input,textarea')].filter(el => Object.prototype.hasOwnProperty.call(T, el.placeholder));
+phEls.forEach(el => el.dataset.cvPhEn = el.placeholder);
+const NAV = { './#about':'\u00c0 propos', './#projects':'Projets', './#career':'Parcours', './#blog':'Formation', './#contacts':'Contact' };
+const navScope = document.querySelector('[data-framer-name="Menu desktop"]') || document;
+const navLinks = [...navScope.querySelectorAll('a[href^="./#"]')].filter(a => NAV[a.getAttribute('href')]);
+navLinks.forEach(a => { if (!a.dataset.cvOrig) a.dataset.cvOrig = a.innerHTML; });
+let lang = localStorage.getItem('cv-lang') || 'en';
+function applyLang(l) {
+  lang = l;
+  localStorage.setItem('cv-lang', l);
+  document.documentElement.lang = l;
+  nodes.forEach(node => {
+    const orig = originals.get(node);
+    if (l === 'fr') { const t = orig.trim(); node.textContent = orig.replace(t, T[t]); }
+    else { node.textContent = orig; }
+  });
+  phEls.forEach(el => { el.placeholder = l === 'fr' ? T[el.dataset.cvPhEn] : el.dataset.cvPhEn; });
+  navLinks.forEach(a => {
+    if (l === 'fr') { a.innerHTML = '<span class="cv-nav-plain">' + NAV[a.getAttribute('href')] + '</span>'; }
+    else { a.innerHTML = a.dataset.cvOrig; }
+  });
+  document.querySelectorAll('.cv-lang-toggle').forEach(b => {
+    b.querySelector('.cv-lang-en').classList.toggle('cv-lang-active', l === 'en');
+    b.querySelector('.cv-lang-fr').classList.toggle('cv-lang-active', l === 'fr');
+    b.setAttribute('aria-label', l === 'en' ? 'Switch to French' : 'Passer en anglais');
+  });
+}
+function makeLangBtn(mobile) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'cv-lang-toggle' + (mobile ? ' cv-lang-mobile' : '');
+  b.innerHTML = '<span class="cv-lang-opt cv-lang-en">EN</span><span class="cv-lang-sep">/</span><span class="cv-lang-opt cv-lang-fr">FR</span>';
+  b.addEventListener('click', () => applyLang(lang === 'en' ? 'fr' : 'en'));
+  return b;
+}
+const headerInner = document.querySelector('[data-framer-name="Menu desktop"] [data-framer-name="Inner"]');
+if (headerInner) headerInner.appendChild(makeLangBtn(false));
+document.body.appendChild(makeLangBtn(true));
+applyLang(lang);
+})();
 </script></body>
 
 </html>
