@@ -9337,6 +9337,11 @@ main[data-framer-name="Main"] { max-width:100vw; left:0 !important; transform:no
     })();
     </script>
 
+    <a class="cv-whatsapp" href="https://wa.me/212627144466" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <span class="cv-whatsapp-icon"><img src="assets/whatsapp.svg" width="26" height="26" alt=""></span>
+        <span class="cv-whatsapp-label">Chat on WhatsApp</span>
+    </a>
+
     <div id="main" data-framer-hydrate-v2="{&quot;routeId&quot;:&quot;augiA20Il&quot;,&quot;localeId&quot;:&quot;default&quot;,&quot;breakpoints&quot;:[{&quot;hash&quot;:&quot;72rtr7&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1200px)&quot;},{&quot;hash&quot;:&quot;rwx1v8&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1199.98px)&quot;},{&quot;hash&quot;:&quot;14yc3qj&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;},{&quot;hash&quot;:&quot;ttr3x1&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1200px)&quot;},{&quot;hash&quot;:&quot;xzrd1h&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1199.98px)&quot;},{&quot;hash&quot;:&quot;17j8e8e&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;}]}"
         data-framer-ssr-released-at="2026-04-07T14:37:52.571Z" data-framer-page-optimized-at="2026-04-15T19:00:22.392Z" data-framer-generated-page>
         <!--$-->
@@ -12499,6 +12504,7 @@ document.querySelectorAll('form').forEach(form => form.addEventListener('submit'
 /* ===== CV Language Toggle EN/FR ===== */
 (function(){
 const T = {
+"Chat on WhatsApp":"Discuter sur WhatsApp",
 "I build and run online businesses end to end, combining e-commerce operations, web design, digital marketing and AI automation.":"Je cr\u00e9e et g\u00e8re des activit\u00e9s en ligne de bout en bout, en combinant op\u00e9rations e-commerce, web design, marketing digital et automatisation IA.",
 "Let's connect":"Contactez-moi",
 "9 years of hands-on digital work":"9 ans d'exp\u00e9rience pratique dans le digital",
@@ -12671,6 +12677,7 @@ function applyLang(l) {
     b.querySelector('.cv-lang-fr').classList.toggle('cv-lang-active', l === 'fr');
     b.setAttribute('aria-label', l === 'en' ? 'Switch to French' : 'Passer en anglais');
   });
+  document.querySelector('.cv-whatsapp').setAttribute('aria-label', l === 'fr' ? 'Discuter sur WhatsApp' : 'Chat on WhatsApp');
 }
 function makeLangBtn(mode) {
   const b = document.createElement('button');
